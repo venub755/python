@@ -40,5 +40,4 @@ def view_the_log() -> 'html':
     return render_template('viewlog.html', the_title='View Log', the_row_titles=titles, the_data=contents)
 
 if __name__ == '__main__':
-
     app.run(debug=True)
