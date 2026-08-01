@@ -7,5 +7,5 @@ setuptools.setup(
     author='venub',
     license='MIT',
     author_email='venub755@gmail.com',
-    py_modules='vsearch'
+    py_modules=['vsearch']
 )

@@ -1,7 +1,1 @@
-a
-c
-e
-h
-r
-s
-v
+vsearch
