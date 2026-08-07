@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: db-util
+Version: 0.1.0
+Summary: A simple package for DB connection.
+Author: venub
+Author-email: venub755@gmail.com
+License: Apache License 2.0
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: license
+Dynamic: license-file
+Dynamic: summary
