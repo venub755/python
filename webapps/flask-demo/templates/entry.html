@@ -1,0 +1,21 @@
+{ % extends 'base.html' % }
+
+{% block body %}
+<h2>{{ the_title }}</h2>
+
+<form method="POST" action="/search4">
+    <table>
+        <p>Use this form to search for letters within a phrase.</p>
+        <tr>
+            <td>Enter a phrase:</td>
+            <td><input type="text" name="phrase" size="40"></td>
+        </tr>
+        <tr>
+            <td>Enter search letters:</td>
+            <td><input type="text" name="letters" size="40"></td>
+        </tr>
+    </table>
+    <p><input type="submit" value="Search"></p>
+</form>
+
+{% endblock %}

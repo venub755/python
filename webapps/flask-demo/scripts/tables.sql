@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS log (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    phrase TEXT NOT NULL,
+    letters TEXT NOT NULL,
+    ip_addr TEXT NOT NULL,
+    browser_details TEXT NOT NULL,
+    results TEXT NOT NULL,
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
