@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: decorators
+Version: 0.1.0
+Summary: A simple package to demonstrate decorators in Python.
+Author: venub
+Author-email: venub755@gmail.com
+License: Apache License 2.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: license
+Dynamic: summary
