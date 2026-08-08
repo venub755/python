@@ -5,9 +5,16 @@ Summary: A simple package for DB connection.
 Author: venub
 Author-email: venub755@gmail.com
 License: Apache License 2.0
+Classifier: Development Status <IP_ADDRESS> 3 - Alpha
+Classifier: Intended Audience <IP_ADDRESS> Developers
+Classifier: License <IP_ADDRESS> OSI Approved <IP_ADDRESS> Apache Software License
+Classifier: Programming Language <IP_ADDRESS> Python <IP_ADDRESS> 3
 License-File: LICENSE
+Requires-Dist: mysql-connector-python
 Dynamic: author
 Dynamic: author-email
+Dynamic: classifier
 Dynamic: license
 Dynamic: license-file
+Dynamic: requires-dist
 Dynamic: summary

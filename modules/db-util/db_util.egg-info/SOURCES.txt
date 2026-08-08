@@ -1,3 +1,4 @@
+DbContextManager.py
 LICENSE
 README.md
 dbConnect.py
@@ -5,5 +6,7 @@ setup.py
 db_util.egg-info/PKG-INFO
 db_util.egg-info/SOURCES.txt
 db_util.egg-info/dependency_links.txt
+db_util.egg-info/requires.txt
 db_util.egg-info/top_level.txt
+tests/test_DbContextManager.py
 tests/test_dbConnect.py
