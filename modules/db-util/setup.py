@@ -8,8 +8,8 @@ setuptools.setup(
     license='Apache License 2.0',
     author_email='venub755@gmail.com',
     py_modules=[
-        'dbConnect', 
-        'DbContextManager'
+        'AbstractFactoryDBContextManager',
+        'MySQLDBContextManager'
     ],
     install_requires=[
         'mysql-connector-python',

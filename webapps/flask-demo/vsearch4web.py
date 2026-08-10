@@ -5,14 +5,15 @@ from html import escape
 from flask import Flask, render_template, request, session
 
 from auth_check import auth_check
-from DbContextManager import DbManager
 from vsearch import vsearch
+from AbstractFactoryDBContextManager import DBManagerFactory
 
 app = Flask(__name__)
 app.secret_key = 'TestingFlaskDemo'  # Replace with
 app.logger.setLevel(logging.DEBUG)
 app.logger.propagate = True
 logging.basicConfig(level=logging.DEBUG, force=True)
+db_type = os.environ.get("DB_TYPE", "mysql")
 db_config = {}
 
 def setup_db_config() -> dict:
@@ -24,6 +25,7 @@ def setup_db_config() -> dict:
         "database": os.environ.get("DB_NAME", "vsearchlogdb"),
         "port": int(os.environ.get("DB_PORT", 3306)),
         "read_timeout": int(os.environ.get("DB_TIMEOUT", 10)),
+        "write_timeout": int(os.environ.get("DB_TIMEOUT", 10)),
     }
     return db_config
 
@@ -46,7 +48,7 @@ def search4() -> str:
                 VALUES (%s, %s, %s, %s, %s)"""
     the_results = str(vsearch(request.form['phrase'], request.form['letters']))
     db_config = setup_db_config()
-    with DbManager(db_config) as cursor:
+    with DBManagerFactory.create_db_manager(db_type, db_config) as cursor:
         cursor.execute(_SQL, (request.form['phrase'], request.form['letters'], request.remote_addr, request.headers.get('User-Agent'), the_results))
     return render_template('results.html', 
                            the_title='Search Results', 
@@ -75,7 +77,7 @@ def view_the_DBlog() -> 'html':
     contents = []
     db_config = setup_db_config()
     emit_debug(f"DB Config: {db_config}")
-    with DbManager(db_config) as cursor:
+    with DBManagerFactory.create_db_manager(db_type, db_config) as cursor:
         cursor.execute("SELECT phrase, letters, ip, user_agent, results FROM log")
         for row in cursor.fetchall():
             contents.append([escape(str(item)) for item in row])
